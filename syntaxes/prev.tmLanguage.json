@@ -1,0 +1,91 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "PREV",
+    "patterns": [
+        {
+            "include": "#code"
+        }
+    ],
+    "repository": {
+        "code": {
+            "patterns": [
+                {
+                    "include": "#literals"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#function-defs"
+                },
+                {
+                    "include": "#functions"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.prev",
+                    "match": "\\b(if|then|else|while|do|end)\\b"
+                },
+                {
+                    "name": "entity.name.type",
+                    "match": "\\b(void|int|bool|char)\\b"
+                },
+                {
+                    "name": "keyword.other",
+                    "match": "\\b(fun|var|where|ptr|arr|rec|new|del|typ)\\b"
+                }
+            ]
+        },
+        "literals": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single",
+                    "begin": "'",
+                    "end": "'",
+                    "match": "'.'"
+                },
+                {
+                    "name": "constant.numeric",
+                    "match": "\\b\\d+\\b"
+                },
+                {
+                    "name": "constant.language",
+                    "match": "\\b(true|false|null|none)\\b"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "begin": "([A-Za-z_$][\\w$]*)\\s*(\\()",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#code"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "source.prev"
+}

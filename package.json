@@ -1,0 +1,26 @@
+{
+    "name": "prev",
+    "displayName": "PREV",
+    "description": "Language support for the PREV programming language.",
+    "version": "0.0.1",
+    "publisher": "MatevzFa",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "prev",
+            "aliases": ["PREV", "prev"],
+            "extensions": [".prev"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "prev",
+            "scopeName": "source.prev",
+            "path": "./syntaxes/prev.tmLanguage.json"
+        }]
+    }
+}
