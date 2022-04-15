@@ -55,7 +55,7 @@
                 },
                 {
                     "name": "string.quoted.double",
-                    "match": "\"(?:[^\"]|\")*\""
+                    "match": "\"(?:[^\"]|\")*?\""
                 },
                 {
                     "name": "constant.numeric",
