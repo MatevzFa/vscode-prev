@@ -26,6 +26,9 @@
                 },
                 {
                     "include": "#variables"
+                },
+                {
+                    "include": "#strings"
                 }
             ]
         },
@@ -41,7 +44,32 @@
                 },
                 {
                     "name": "keyword.other",
-                    "match": "\\b(fun|var|where|ptr|arr|rec|new|del|typ)\\b"
+                    "match": "\\b(fun|var|where|ptr|rec|new|del|typ)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.prev"
+                        }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.prev"
+                        }
+                    },
+                    "name": "string.quoted.double.prev",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.prev"
+                        }
+                    ]
                 }
             ]
         },
@@ -52,10 +80,6 @@
                     "begin": "'",
                     "end": "'",
                     "match": "'.'"
-                },
-                {
-                    "name": "string.quoted.double",
-                    "match": "\"(?:[^\"]|\")*?\""
                 },
                 {
                     "name": "constant.numeric",
