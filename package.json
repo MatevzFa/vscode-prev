@@ -2,8 +2,11 @@
     "name": "prev",
     "displayName": "PREV",
     "description": "Language support for the PREV programming language.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "MatevzFa",
+    "repository": {
+        "url": "https://github.com/MatevzFa/vscode-prev"
+    },
     "engines": {
         "vscode": "^1.23.0"
     },
